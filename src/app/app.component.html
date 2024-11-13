@@ -1,0 +1,17 @@
+<app-cabecalho></app-cabecalho>
+<!-- <app-rodape></app-rodape> -->
+<main>
+  <ul id="users">
+    @for(user of users; track user.id){
+    <li>
+      <app-user [user] ="user" (select)="onSelectUser($event)"/>
+    </li>
+    }
+  </ul>
+    @if (selectedUser) {
+        <app-tasks [name]="selectedUser.name"/>
+        }@else{
+          <p id= "Fallback"> akakakakakka</p>
+    }
+</main>
+
